@@ -14,8 +14,13 @@ class FilterDataProvider: NEFilterDataProvider {
     
     /// Handle a new flow of data.
     override func handleNewFlow(_ flow: NEFilterFlow) -> NEFilterNewFlowVerdict {
-        let result = NEFilterNewFlowVerdict.needRules()
-        return result
+        if FilterUtilities.shouldAllowAccess(flow) {
+            return NEFilterNewFlowVerdict.allow()
+        }
+        return NEFilterNewFlowVerdict.remediateVerdict(
+            withRemediationURLMapKey: FilterUtilities.remediationURLMapKey,
+            remediationButtonTextMapKey: FilterUtilities.remediationButtonMapKey
+        )
     }
     
     /// Filter an inbound chunk of data.

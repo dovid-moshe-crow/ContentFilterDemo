@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,8 +18,8 @@
 		2BA8F55521CCB7B600A8BBD8 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA8F55221CCB7B600A8BBD8 /* Log.swift */; };
 		2BA8F55721CCBF5600A8BBD8 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BA8F52B21CCB5E300A8BBD8 /* NetworkExtension.framework */; };
 		2BA8F55821CCBF6C00A8BBD8 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BA8F52B21CCB5E300A8BBD8 /* NetworkExtension.framework */; };
-		2BA8F55921CCCCA600A8BBD8 /* ContentFilter.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2BA8F53321CCB6EA00A8BBD8 /* ContentFilter.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		2BA8F55D21CCCCAB00A8BBD8 /* ContentFilterData.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2BA8F54421CCB73100A8BBD8 /* ContentFilterData.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2BA8F55921CCCCA600A8BBD8 /* ContentFilter.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 2BA8F53321CCB6EA00A8BBD8 /* ContentFilter.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2BA8F55D21CCCCAB00A8BBD8 /* ContentFilterData.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 2BA8F54421CCB73100A8BBD8 /* ContentFilterData.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2BA8F56121CCF32400A8BBD8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2BA8F56021CCF32300A8BBD8 /* README.md */; };
 		2BA8F56221CCF32400A8BBD8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2BA8F56021CCF32300A8BBD8 /* README.md */; };
 		2BA8F56321CCF32400A8BBD8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2BA8F56021CCF32300A8BBD8 /* README.md */; };
@@ -48,16 +48,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		2BA8F55C21CCCCA600A8BBD8 /* Embed App Extensions */ = {
+		2BA8F55C21CCCCA600A8BBD8 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				2BA8F55D21CCCCAB00A8BBD8 /* ContentFilterData.appex in Embed App Extensions */,
-				2BA8F55921CCCCA600A8BBD8 /* ContentFilter.appex in Embed App Extensions */,
+				2BA8F55D21CCCCAB00A8BBD8 /* ContentFilterData.appex in Embed Foundation Extensions */,
+				2BA8F55921CCCCA600A8BBD8 /* ContentFilter.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -231,7 +231,7 @@
 				2BFAFE2421CCB25C004B3A1C /* Sources */,
 				2BFAFE2521CCB25C004B3A1C /* Frameworks */,
 				2BFAFE2621CCB25C004B3A1C /* Resources */,
-				2BA8F55C21CCCCA600A8BBD8 /* Embed App Extensions */,
+				2BA8F55C21CCCCA600A8BBD8 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -250,8 +250,9 @@
 		2BFAFE2021CCB25C004B3A1C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1000;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1640;
 				ORGANIZATIONNAME = "ProMobi Technologies";
 				TargetAttributes = {
 					2BA8F53221CCB6EA00A8BBD8 = {
@@ -413,8 +414,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ContentFilter/ContentFilter.entitlements;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 7J3EXH6427;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4J82HMXY47;
 				INFOPLIST_FILE = ContentFilter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -422,9 +424,9 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.demo.ContentFilterDemoApp.ContentFilter;
+				PRODUCT_BUNDLE_IDENTIFIER = com.demo.ContentFilterDemoAppTry.Filter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = ContentFilter;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -435,8 +437,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ContentFilter/ContentFilter.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 4J82HMXY47;
 				INFOPLIST_FILE = ContentFilter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -444,9 +448,10 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.demo.ContentFilterDemoApp.ContentFilter;
+				PRODUCT_BUNDLE_IDENTIFIER = com.demo.DemoApp.ContentFilter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Testing Content Filter";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -457,8 +462,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ContentFilterData/ContentFilterData.entitlements;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 7J3EXH6427;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4J82HMXY47;
 				INFOPLIST_FILE = ContentFilterData/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -466,9 +472,9 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.demo.ContentFilterDemoApp.ContentFilterData;
+				PRODUCT_BUNDLE_IDENTIFIER = com.demo.ContentFilterDemoAppTry.Data;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = ContentFilterData;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -523,6 +529,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -534,6 +541,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -548,7 +556,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -584,6 +592,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -595,6 +604,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -603,7 +613,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -616,19 +626,19 @@
 		2BFAFE3B21CCB25E004B3A1C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ContentFilterDemoApp/ContentFilterDemoApp.entitlements;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 7J3EXH6427;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4J82HMXY47;
 				INFOPLIST_FILE = ContentFilterDemoApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.demo.ContentFilterDemoApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.demo.ContentFilterDemoAppTry;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "ContentFilterDemoApp Development";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -637,7 +647,6 @@
 		2BFAFE3C21CCB25E004B3A1C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ContentFilterDemoApp/ContentFilterDemoApp.entitlements;
 				CODE_SIGN_STYLE = Manual;

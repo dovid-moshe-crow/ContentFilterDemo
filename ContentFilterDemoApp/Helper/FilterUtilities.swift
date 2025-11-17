@@ -6,12 +6,25 @@ open class FilterUtilities {
     
     // MARK: Properties
     public static let defaults = UserDefaults(suiteName: "7J3EXH6427.group.com.demo.ContentFilterDemoApp")
+    public static let remediationURLMapKey = "blockedContentURL"
+    public static let remediationButtonMapKey = "blockedContentButton"
+    public static let remediationButtonText = "Learn why Matcher blocked this site"
+    public static let remediationURL = "https://www.matcher.co.il/blocked?blockedUrl=\(NEFilterProviderRemediationURLFlowURL)&blockedHost=\(NEFilterProviderRemediationURLFlowURLHostname)&org=\(NEFilterProviderRemediationURLOrganization)"
     open class func shouldAllowAccess(_ flow: NEFilterFlow) -> Bool {
+        let hostname = FilterUtilities.getFlowHostname(flow)
+        
+        logw("host name is \(hostname)")
+
+        if hostname == "www.google.com" || hostname.hasSuffix(".google.com") {
+            return false
+        }else{
+            return true
+        }
         //access to your app and certains url should be allowd handling
         if #available(iOS 11.0, *) {
             if let bundleId = flow.sourceAppIdentifier {
                 logw("sourceAppIdentifier \(bundleId)")
-                if bundleId == "7J3EXH6427.com.demo.ContentFilterDemoApp"{
+                if bundleId == "4J82HMXY47.com.demo.ContentFilterDemoApp"{
                     return true
                 }
             }
@@ -22,6 +35,13 @@ open class FilterUtilities {
             if hostname.isEmpty {
                 return true
             }
+            
+            if hostname == "www.google.com" || hostname.hasSuffix(".google.com") {
+                return false
+            }else{
+                return true
+            }
+            
             if hostname == "192.168.100.48" {
                 return true //our own server url
             }
