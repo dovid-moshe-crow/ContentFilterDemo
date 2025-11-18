@@ -10,7 +10,7 @@ open class FilterUtilities {
     public static let remediationURLMapKey = "blockedContentURL"
     public static let remediationButtonMapKey = "blockedContentButton"
     public static let remediationButtonText = "Learn why KFilter blocked this site"
-    public static let remediationURL = "https://maps.apple.com/?q=BlockedSite&address=\(NEFilterProviderRemediationURLFlowURLHostname)&ll=37.3349,-122.0090"
+    public static let remediationURL = "https://kfilter-redirecter.vercel.app/api/blocked?blockedUrl=\(NEFilterProviderRemediationURLFlowURL)&blockedHost=\(NEFilterProviderRemediationURLFlowURLHostname)&org=\(NEFilterProviderRemediationURLOrganization)"
     open class func shouldAllowAccess(_ flow: NEFilterFlow) -> Bool {
         let hostname = FilterUtilities.getFlowHostname(flow)
         
