@@ -27,7 +27,7 @@
 			<string>com.demo.ContentFilterDemoApp</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>matcherfilter</string>
+				<string>kfilter</string>
 			</array>
 		</dict>
 	</array>

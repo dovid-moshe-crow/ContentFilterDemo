@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        guard url.scheme == "matcherfilter" else { return false }
+        guard url.scheme == "kfilter" else { return false }
         handleBlockedLink(url: url)
         return true
     }
@@ -99,7 +99,7 @@ final class BlockedSiteViewController: UIViewController {
         }
 
         let titleLabel = UILabel()
-        titleLabel.text = "Matcher blocked this site"
+        titleLabel.text = "KFilter blocked this site"
         titleLabel.font = .preferredFont(forTextStyle: .title2)
         titleLabel.textAlignment = .center
         titleLabel.numberOfLines = 0
