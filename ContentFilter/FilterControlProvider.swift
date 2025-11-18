@@ -6,6 +6,7 @@
 //  Copyright © 2018 Demo Technologies. All rights reserved.
 //
 
+import Foundation
 import NetworkExtension
 
 class FilterControlProvider: NEFilterControlProvider {

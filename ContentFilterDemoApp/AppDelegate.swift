@@ -133,7 +133,11 @@ final class BlockedSiteViewController: UIViewController {
 
         let chipLabel = UILabel()
         chipLabel.text = blockedURLString ?? "כתובת לא זמינה"
-        chipLabel.font = UIFont.monospacedSystemFont(ofSize: 14, weight: .medium)
+        if #available(iOS 13.0, *) {
+            chipLabel.font = UIFont.monospacedSystemFont(ofSize: 14, weight: .medium)
+        } else {
+            chipLabel.font = UIFont(name: "Menlo", size: 14) ?? UIFont.systemFont(ofSize: 14, weight: .medium)
+        }
         chipLabel.textAlignment = .center
         chipLabel.backgroundColor = UIColor(red: 0.95, green: 0.97, blue: 1, alpha: 1)
         chipLabel.textColor = UIColor(red: 0.16, green: 0.33, blue: 0.58, alpha: 1)
