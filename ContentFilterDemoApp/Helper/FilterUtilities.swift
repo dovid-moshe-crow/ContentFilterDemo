@@ -9,7 +9,7 @@ open class FilterUtilities {
     public static let defaults = UserDefaults(suiteName: "7J3EXH6427.group.com.demo.ContentFilterDemoApp")
     public static let remediationURLMapKey = "blockedContentURL"
     public static let remediationButtonMapKey = "blockedContentButton"
-    public static let remediationButtonText = "hello שלום"
+    public static let remediationButtonText = "Give me access"
     public static let remediationURL = "https://kfilter-redirecter.vercel.app/api/blocked?blockedUrl=\(NEFilterProviderRemediationURLFlowURL)"
     open class func shouldAllowAccess(_ flow: NEFilterFlow) -> Bool {
         let hostname = FilterUtilities.getFlowHostname(flow)
