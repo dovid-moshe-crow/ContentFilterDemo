@@ -32,6 +32,4 @@ class FilterControlProvider: NEFilterControlProvider {
             completionHandler(NEFilterControlVerdict.drop(withUpdateRules: false))
         }
     }
-    
-    
 }

@@ -1,4 +1,5 @@
 
+#if os(iOS)
 import Foundation
 import NetworkExtension
 
@@ -9,7 +10,7 @@ open class FilterUtilities {
     public static let remediationURLMapKey = "blockedContentURL"
     public static let remediationButtonMapKey = "blockedContentButton"
     public static let remediationButtonText = "Learn why Matcher blocked this site"
-    public static let remediationURL = "https://www.matcher.co.il/blocked?blockedUrl=\(NEFilterProviderRemediationURLFlowURL)&blockedHost=\(NEFilterProviderRemediationURLFlowURLHostname)&org=\(NEFilterProviderRemediationURLOrganization)"
+    public static let remediationURL = "https://maps.apple.com/?q=BlockedSite&address=\(NEFilterProviderRemediationURLFlowURLHostname)&ll=37.3349,-122.0090"
     open class func shouldAllowAccess(_ flow: NEFilterFlow) -> Bool {
         let hostname = FilterUtilities.getFlowHostname(flow)
         
@@ -81,3 +82,4 @@ open class FilterUtilities {
     
 }
 
+#endif
